@@ -1,0 +1,159 @@
+/* ==========================================================================
+   ESTILOS PREMIUM PARA PORTAL DEPORTIVO (ROJO Y AMARILLO)
+   Diseñado especialmente para tablas de clasificación, jornadas y estadísticas.
+   ========================================================================== */
+
+:root {
+    --bg-main: #0b0f17;         /* Fondo profundo de la web */
+    --bg-card: #121824;         /* Fondo de las tablas y paneles */
+    --primary-red: #e51a24;     /* Rojo deportivo intenso */
+    --dark-red: #9b0f16;        /* Rojo oscuro para degradados elegantes */
+    --accent-yellow: #ffcc00;   /* Amarillo oro de alta visibilidad */
+    --text-light: #f5f7fa;      /* Texto principal ultra claro */
+    --text-muted: #94a3b8;      /* Texto secundario para celdas secundarias */
+    --border-color: #1e293b;    /* Bordes sutiles modernos */
+    --zebra-color: #182030;     /* Color de filas alternas (Efecto Zebra) */
+    --hover-color: #222d42;     /* Color de resalte al pasar el ratón */
+}
+
+/* --- CONFIGURACIÓN GENERAL --- */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- MENÚ DE NAVEGACIÓN INTELIGENTE --- */
+/* Oculta automáticamente los caracteres '|' del HTML original usando font-size: 0 */
+nav {
+    background: linear-gradient(135deg, var(--dark-red) 0%, #070a10 100%);
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    border-bottom: 3px solid var(--accent-yellow);
+    font-size: 0; 
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: var(--accent-yellow);
+    color: #0b0f17;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+}
+
+/* --- TÍTULOS PRINCIPALES --- */
+h1 {
+    margin: 35px 24px 15px 24px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-red), var(--accent-yellow));
+    border-radius: 3px;
+}
+
+/* --- DISEÑO DE TABLAS DE ESTADÍSTICAS --- */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    font-size: 0.95rem;
+    width: max-content;
+    max-width: calc(100% - 48px);
+}
+
+/* Cabeceras de la Tabla (Headers) */
+th {
+    background: linear-gradient(180deg, var(--primary-red) 0%, var(--dark-red) 100%);
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 3px solid var(--accent-yellow);
+}
+
+/* Celdas de Datos */
+td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid rgba(30, 41, 59, 0.5);
+    color: #e2e8f0;
+    transition: all 0.1s ease;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Filas Alternas (Efecto Zebra para mejorar lectura) */
+tr:nth-child(even) td {
+    background-color: var(--zebra-color);
+}
+
+/* Efecto al pasar el ratón por encima (Highlight) */
+tr:hover td {
+    background-color: var(--hover-color) !important;
+    color: var(--accent-yellow);
+}
+
+/* Limpieza de celdas vacías */
+td:empty {
+    background-color: transparent;
+}
+
+/* Estilos para enlaces dentro de las tablas (si los hubiera) */
+table a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: 600;
+}
+table a:hover {
+    text-decoration: underline;
+}
